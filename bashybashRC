@@ -1,0 +1,28 @@
+#===================================================================================
+# FUNCTIONS (must chmod 700 scripts)
+#===================================================================================
+function open {
+    cd ~/
+    chmod 700 .downAll.sh
+    ./.downAll.sh
+}
+
+function close {
+    cd ~/
+    chmod 700 .upAll.sh
+    ./.upAll.sh
+    echo "Goodbye!"
+    sleep 1
+    exit
+}
+
+
+#===================================================================================
+# ALIAS ( source ~/.bashrc )
+#===================================================================================
+alias cloud='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace'
+alias school='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/School'
+alias algo='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/School/Current/Algorithms'
+alias sys='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/School/Current/Systems'
+alias python='winpty python.exe'
+

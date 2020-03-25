@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/u/yep/CS199/Python/Conditionals'
+let g:netrw_dirhist_2='/u/yep/CS199/.git'
+let g:netrw_dirhist_3='/u/yep'
+let g:netrw_dirhist_4='/u/yep/CS199'
+let g:netrw_dirhist_5='/home/yep/common/Desktop/School/Current/CS199_2/home_work/HW3'
+let g:netrw_dirhist_6='/home/yep/common/Desktop/ignore'
