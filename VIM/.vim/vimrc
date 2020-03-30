@@ -17,11 +17,12 @@ set ignorecase
 set smartcase
 set backspace=indent,eol,start
 set nostartofline
-set autoindent
+"set autoindent
 set laststatus=2
 set confirm
-set shiftwidth=4
-set tabstop=4
+"set shiftwidth=4
+"set tabstop=4
+set expandtab autoindent shiftwidth=2 tabstop=2
 set softtabstop=4
 set expandtab
 set smarttab
@@ -30,10 +31,9 @@ set mouse=a
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set visualbell
 
-
 "=================================================
 "=================================================
-" Basic Settings
+" Functions
 " ================================================
 " ================================================
 " function to restore cursor position
@@ -50,4 +50,14 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+" auto-delete trailing whitespace
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd FileType c,cpp,java,php,ruby,python autocmd
+      \ BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre Makefile :call <SID>StripTrailingWhitespaces()
 
