@@ -15,7 +15,6 @@ This repository contains my CLI and general enviornmental configurations, to mak
 
   - [Welcome](#welcome-to-~ooo~)
   - [**Get Started**](#get-started-)
-  - [Usage](#usage-)
   - [Technologies](#technologies-)
   - [License/Stats/Author](#license,-Stats,-author-)
 
