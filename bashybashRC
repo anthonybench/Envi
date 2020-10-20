@@ -22,6 +22,7 @@ function close {
 #===================================================================================
 # navigation
 alias cloud='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace'
+alias wa='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/Algorithms'
 alias template='code -n ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/Templates'
 
 # execution
