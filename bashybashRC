@@ -22,22 +22,19 @@ function close {
 #===================================================================================
 # navigation
 alias cloud='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace'
-alias wa='cd ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/Algorithms'
-alias template='code -n ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/Templates'
+alias nb='code -n ~/OneDrive/Anthony\ Bench\ Data/CloudSpace/Templates'
 
-# execution
+# python execution
 #alias python='winpty python.exe'
 
 # git
-alias gs='git status'
-alias gp='git pull'
-alias gpom='git push origin master'
+alias gs='git status --short --branch'
+alias gb='git branch'
 
 # general utility
 alias show='echo ""; ls -logF; echo ""'
 alias showa='echo ""; ls -logFA; echo ""'
+alias src='src'
 
 # school
-alias fsex='code -n ~/OneDrive/Anthony\ Bench\ Data/MSc\ Computer\ Science/Masters/FullStack/webdev-examples'
-alias fshw='code -n ~/OneDrive/Anthony\ Bench\ Data/MSc\ Computer\ Science/Masters/FullStack/webdev-exercises'
 
