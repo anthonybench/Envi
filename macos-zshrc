@@ -1,0 +1,90 @@
+#=======================
+# FUNCTIONS
+#=======================
+# Rule of Thumb:
+#   If it can't fit in a non-scrolling line, it's an external script.
+#~~~START_FUNCTIONS
+# General
+function backup() {~/sleepyscripts/backup.sh $@;}
+function updatenb() {cd ~/Desktop/Repos/notebook; git pull origin master;}
+function awsauth() {~/sleepyscripts/awsauth.sh $@;}
+function wakeup() {~/sleepyscripts/wakeup.sh;}
+function funcs() {~/sleepyscripts/myfuncs.py | less;}
+function macros() {~/sleepyscripts/mymacros.py | less;}
+function border() {~/sleepyscripts/border.py $@;}
+
+# Build from Template
+function newtool() {~/sleepyscripts/newtool.sh $@;}
+function newrunbook() {~/sleepyscripts/newrunbook.sh $@;}
+
+# Databricks
+function dtbget() {databricks --profile $1 jobs get --job-id $2}
+
+# Sops
+function sopsenc() {~/sleepyscripts/sopsenc.sh $@;}
+
+# Script Testing
+function test() {~/sleepyscripts/test.sh $@;}
+#~~~END_FUNCTIONS
+
+
+#=======================
+# MACROS
+#=======================
+#~~~START_MACROS
+# General
+alias show='echo; ls -logF; echo'
+alias showa='echo; ls -logFA; echo'
+alias src='source ~/.zshrc'
+alias gs='git status'
+alias gb='git branch'
+alias jenkinsstart='brew services start jenkins-lts; echo "http://localhost:8080"'
+alias jenkinsstop='brew services stop jenkins-lts'
+alias streamdeck="open -a 'Stream Deck'"
+alias notepad="open -a 'TextEdit'";
+alias todo="open -a 'TextEdit' ~/Desktop/TODO.txt"
+
+# TF/TG
+alias tfap='terraform apply'
+alias tfde='terraform destroy'
+alias tfpl='terraform plan'
+alias tgap='terragrunt apply'
+alias tgde='terragrunt destroy'
+alias tgpl='terragrunt plan'
+
+# Chrome
+alias webauth="open -a 'Google Chrome' https://cylance.okta.com/app/UserHome#;open -a 'Google Chrome' https://cp-sna.cylancecorp.com:5555/netaccess/connstatus.html"
+
+# VS Code
+#---Add Env Vars--------------------
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+#-----------------------------------
+alias docket='code -n ~/Desktop/LocalDev/Notes'
+alias nb='code -n ~/Desktop/Repos/notebook'
+alias tfrepo='code -n ~/Desktop/Repos/terraform'
+alias toolsrepo='code -n ~/Desktop/Repos/tools'
+alias dtbrepo='code -n ~/Desktop/Repos/databricks/terraform'
+alias repos='cd ~/Desktop/Repos'
+alias scratch='code -n ~/Desktop/LocalDev/Sandbox'
+alias notes='code -n ~/Desktop/LocalDev/Notes/CurrentWork'
+alias pw='code -n ~/Desktop/Personal/notes.txt'
+alias editrc='code -n ~/.zshrc ~/sleepyscripts; echo "Remember to source! (src)"'
+alias archive='code -n ~/Desktop/LocalDev/Archive'
+alias template='code -n ~/Desktop/LocalDev/Templates'
+alias docs='code -n ~/Desktop/LocalDev/DocLinks.txt'
+
+# AWS Auth
+alias awsdefault='okta-aws-cli -u iyep@cylance.com -r us-east-1 -o json -p default --role devops-admins -a 363141427109'
+alias awsdev='okta-aws-cli -u iyep@cylance.com -r us-east-1 -o json -p cylancedev --role devops-admins -a 363141427109'
+alias awsdata='okta-aws-cli -u iyep@cylance.com -r us-east-1 -o json -p cylancedata --role devops-admins -a 254516979945'
+alias awsstaging='okta-aws-cli -u iyep@cylance.com -r us-east-1 -o json -p cylancestaging --role devops-admins -a 245828668921'
+alias awslegacy='okta-aws-cli -u iyep@cylance.com -r us-east-1 -o json -p cylancelegacy --role devops-admins -a 494215538268'
+alias awsprod='okta-aws-cli -u iyep@cylance.com -r us-east-1 -o json -p cylanceprod --role devops-admins -a 162750755750'
+alias awsqa='okta-aws-cli -u iyep@cylance.com -r us-east-1 -o json -p cylanceqa --role devops-admins -a 923444253777'
+
+# AWS CLI
+alias tghealth='aws elbv2 describe-target-health --target-group-arn XXX --profile cylancedata'
+
+# Pyenv
+eval "$(pyenv init -)"
+#~~~END_MACROS
